@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a40cd56_ceaf56f7",
+        "filename": "SPECS/instantiate.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-05-07T05:56:39Z",
+      "side": 1,
+      "message": "$(dirname %{_cm_caas_config_file}) or maybe can we use %{_cm_caas_config_dir} variable because 3 out of 2 would use that here instead of %{_cm_caas_config_file}.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 24
+      },
+      "revId": "9a843385c02081fde993e3638cd4c1e0167b5081",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}
