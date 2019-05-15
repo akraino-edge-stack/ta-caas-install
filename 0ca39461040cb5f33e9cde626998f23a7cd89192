@@ -16,6 +16,24 @@
       "revId": "0ca39461040cb5f33e9cde626998f23a7cd89192",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7fe1a4cc_e3791184",
+        "filename": "cm_config/caas.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-05-15T13:20:34Z",
+      "side": 1,
+      "message": "\u003e shouldn\u0027t these be {{ caas_dns_domain }}?\n\nNo, the templating loads every variables from \"caas\" domain, and from this template file.",
+      "parentUuid": "1ad4ad0a_b2df5584",
+      "revId": "0ca39461040cb5f33e9cde626998f23a7cd89192",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
