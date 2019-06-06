@@ -15,12 +15,11 @@
 %define COMPONENT utils
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 1
 %define KUBELET_PLUGINS_LOGDIR /var/log/kubelet-plugins/
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
-Release:        %{RPM_MINOR_VERSION}%{?dist}
+Release:        %{_version}%{?dist}
 Summary:        Containers as a Service supplementary utils
 License:        %{_platform_license}
 BuildArch:      x86_64
