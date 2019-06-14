@@ -26,6 +26,8 @@ BuildArch:      x86_64
 Vendor:         %{_platform_vendor}
 Source0:        %{name}-%{version}.tar.gz
 
+Requires: rsync
+
 %description
 This rpm contains the necessary playbooks to instantiate the caas subsystem.
 
