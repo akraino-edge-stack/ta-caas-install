@@ -16,6 +16,24 @@
       "revId": "53cc731eead8b56314cca0c7517b2ff237240939",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be3f7995_857a20c3",
+        "filename": "infra-charts/templates/webhook-conf-updater-job.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-06-14T12:38:37Z",
+      "side": 1,
+      "message": "\u003e why the dependency on the ES image?\n\nSet to webhook image.",
+      "parentUuid": "c58c5e6a_feed8a8b",
+      "revId": "53cc731eead8b56314cca0c7517b2ff237240939",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
