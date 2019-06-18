@@ -15,7 +15,7 @@
 
 # TODO: these should be changed to use docker image module. However, the name and the tag should be stored and replaced separately in Ansible dictionary to be able to do that
 - name: import docker containers
-  shell: "/usr/bin/docker load -q -i {{ image_directory }}/{{ item }}*{{ image_file_extension }}"
+  shell: "case `file {{ image_directory }}/{{ item }}*{{ image_file_extension }} | cut -d' ' -f2` in gzip) cat=zcat;; XZ) cat=xzcat;; esac; /usr/bin/$cat {{ image_directory }}/{{ item }}*{{ image_file_extension }} | /usr/bin/docker load -q"
   register: loaded_containers
   with_items: "{{ images | mandatory }}"
   environment: "{{ docker_environment }}"
