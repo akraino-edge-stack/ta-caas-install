@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "854f81e1_f63a1f84",
+        "filename": "infra-charts/values_fluentd.yaml.j2",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-06-18T13:40:07Z",
+      "side": 1,
+      "message": "what\u0027s the default of caas.log_forwarding in the CM code?\n\njust asking because I don\u0027t remember which way we went: do we set it to rsyslog within NCIR from an NCIR specific config handler, or rsyslog is the default value and we need to set it to ES from a REC specific confighandler?\nif the second, Krisz just created that handler, but we still need to add a new function into it",
+      "revId": "323636e4688119fae3981ff1dc5daada038c1283",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
