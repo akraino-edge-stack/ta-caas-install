@@ -34,6 +34,24 @@
       "revId": "4c67387afce82cd580c0550c939b9c2447e8f95f",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e003b7e_4cd912ef",
+        "filename": "SPECS/infra-charts.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-06-28T09:14:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5a8fe77f_ed0eea48",
+      "revId": "4c67387afce82cd580c0550c939b9c2447e8f95f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
