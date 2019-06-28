@@ -52,6 +52,29 @@
       "revId": "4c67387afce82cd580c0550c939b9c2447e8f95f",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b087fd9_4109d873",
+        "filename": "ansible/playbooks/infra_chart_reconfig_fluentd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-06-28T09:16:37Z",
+      "side": 1,
+      "message": "This should be renamed to `install_caas_infra`",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 52
+      },
+      "revId": "4c67387afce82cd580c0550c939b9c2447e8f95f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
