@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b179eb02_8f5d08bc",
+        "filename": "SPECS/infra-charts.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-07-03T14:00:50Z",
+      "side": 1,
+      "message": "https://gerrit.akraino.org/r/gitweb?p\u003dta/caas-install.git;a\u003dblob;f\u003dSPECS/instantiate.spec;h\u003db8cad86015f3a68aad9443f9d7e148326340b84a;hb\u003drefs/heads/master#l71",
+      "revId": "971992b4652e6aadaaa3ab6f4e7edf3355f814b1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
