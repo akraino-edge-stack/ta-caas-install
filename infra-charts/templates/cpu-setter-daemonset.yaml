@@ -53,7 +53,9 @@ spec:
            readOnly: true
          - mountPath: /etc/cpu-pooler
            name: cpu-pooler-config
-         - mountPath: /var/lib/kubelet/device-plugins/kubelet_internal_checkpoint
+         - mountPath: /sys/fs/cgroup/cpuset/kubepods/
+           name: kubepods
+         - mountPath: /var/lib/kubelet/device-plugins/
            name: checkpointfile
            readOnly: true
         env:
@@ -61,13 +63,18 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
+        securityContext:
+          privileged: true
       volumes:
       - name: time-mount
         hostPath:
           path: /etc/localtime
       - name: checkpointfile
         hostPath:
-         path: /var/lib/kubelet/device-plugins/kubelet_internal_checkpoint
+         path: /var/lib/kubelet/device-plugins/
+      - name: kubepods
+        hostPath:
+         path: /sys/fs/cgroup/cpuset/kubepods/
       - name: cpu-pooler-config
         configMap:
           name: cpu-pooler-configmap
