@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93a6c5e6_ef1129e4",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-07-08T14:50:28Z",
+      "side": 1,
+      "message": "we probably don\u0027t need  to define the same things twice\nremove one unnecessary reference from the templates instead",
+      "revId": "40cc685d4e32130f143c9fe08d26aeda35b4799c",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
