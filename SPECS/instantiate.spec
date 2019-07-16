@@ -81,6 +81,7 @@ sed -ri '/^manifests_directory/{s|:.*|: %{_caas_manifest_path}|}'              %
 sed -ri '/^rbac_manifests_directory/{s|:.*|: %{_caas_rbac_manifests_path}|}'   %{buildroot}/%{_cm_caas_config_file}
 sed -ri '/^caas_chart_path/{s|:.*|: %{_caas_chart_path}|}'                     %{buildroot}/%{_cm_caas_config_file}
 sed -ri '/^libexec_dir/{s|:.*|: %{_caas_libexec_path}|}'                       %{buildroot}/%{_cm_caas_config_file}
+sed -ri '/^danm_crd_dir/{s|:.*|: %{_caas_danm_crd_path}|}'                     %{buildroot}/%{_cm_caas_config_file}
 
 %files
 %{_playbooks_path}/*
