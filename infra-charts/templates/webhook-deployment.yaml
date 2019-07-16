@@ -32,7 +32,7 @@ spec:
         danm.k8s.io/interfaces: |
           [
             {
-              "network":"flannel"
+              "tenantNetwork": "default", "ip":"dynamic"
             }
           ]
       name: cpu-dev-pod-mutator
