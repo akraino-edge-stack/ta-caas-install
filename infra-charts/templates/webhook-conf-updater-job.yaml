@@ -15,7 +15,7 @@ spec:
         danm.k8s.io/interfaces: |
           [
             {
-              "network":"flannel"
+              "tenantNetwork": "default", "ip":"dynamic"
             }
           ]
     spec:

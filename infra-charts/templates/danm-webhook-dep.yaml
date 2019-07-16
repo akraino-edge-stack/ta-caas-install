@@ -13,17 +13,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */}}
-{{ if .Values.svcwatcher.required }}
+{{ if .Values.danm_webhook.required }}
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: svcwatcher
+  name: danm-webhook-deployment
   namespace: kube-system
+  labels:
+    {{ .Values.kubernetes_component_label }}: danm-webhook
 spec:
   selector:
     matchLabels:
-      {{ .Values.kubernetes_component_label }}: svcwatcher
+      {{ .Values.kubernetes_component_label }}: danm-webhook
   template:
     metadata:
       annotations:
@@ -33,34 +35,25 @@ spec:
               "tenantNetwork": "default", "ip":"dynamic"
             }
           ]
+      name: danm-webhook
       labels:
-        {{ .Values.kubernetes_component_label }}: svcwatcher
+        {{ .Values.kubernetes_component_label }}: danm-webhook
     spec:
-      priorityClassName: "system-cluster-critical"
-      dnsPolicy: ClusterFirst
+      serviceAccountName: danm-webhook
       nodeSelector:
         nodetype: caas_master
       containers:
-        - name: svcwatcher
-          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/svcwatcher:{{ .Values.svcwatcher.container_version }}
-          args:
-            - "--logtostderr"
-          resources:
-            requests:
-              cpu: "10m"
+        - name: danm-webhook
+          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/danm_webhook:{{ .Values.danm_webhook.container_version }}
+          command: [ "/usr/local/bin/webhook", "-tls-cert-bundle=/etc/webhook/certs/danm_webhook.crt", "-tls-private-key-file=/etc/webhook/certs/danm_webhook.key", "bind-port={{ .Values.danm_webhook.webhook_target_port }}" ]
+          imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: time-mount
-              mountPath: /etc/localtime
+            - name: webhook-certs
+              mountPath: /etc/webhook/certs
               readOnly: true
-      tolerations:
-       - effect: NoSchedule
-         operator: Exists
-       - effect: NoExecute
-         operator: Exists
-      terminationGracePeriodSeconds: 0
-      serviceAccountName: svcwatcher
       volumes:
-        - name: time-mount
+        # TODO: make it a secret
+        - name: webhook-certs
           hostPath:
-            path: /etc/localtime
+            path: /etc/kubernetes/ssl/
 {{ end }}
