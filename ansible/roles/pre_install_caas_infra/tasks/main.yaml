@@ -14,7 +14,7 @@
 # limitations under the License.
 
   - name: prepare cpupooler
-    import_tasks: prepare_cpupooler.yaml
+    import_tasks: prepare_ca_bundle.yaml
 
   - name: prepare metrics
     import_tasks: prepare_metrics.yaml
