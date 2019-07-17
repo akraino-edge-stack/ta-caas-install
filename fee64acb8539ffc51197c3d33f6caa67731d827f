@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "d582e59f_6bded1bf",
+        "filename": "ansible/roles/pre_install_caas_infra/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-17T12:40:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "056f23fb_629a9439",
+      "revId": "fee64acb8539ffc51197c3d33f6caa67731d827f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7db20c9_434dc7a0",
         "filename": "ansible/roles/pre_install_caas_infra/tasks/prepare_ca_bundle.yaml",
         "patchSetId": 1
@@ -50,6 +68,24 @@
       "revId": "fee64acb8539ffc51197c3d33f6caa67731d827f",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47f7b02f_502146f6",
+        "filename": "ansible/roles/pre_install_caas_infra/tasks/prepare_ca_bundle.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-17T12:40:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7db20c9_434dc7a0",
+      "revId": "fee64acb8539ffc51197c3d33f6caa67731d827f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     },
     {
       "key": {
