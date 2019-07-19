@@ -103,6 +103,24 @@
       "revId": "fee64acb8539ffc51197c3d33f6caa67731d827f",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17b80521_943c71b4",
+        "filename": "infra-charts/templates/danm-webhook-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-19T15:38:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "945a903f_a745a10b",
+      "revId": "fee64acb8539ffc51197c3d33f6caa67731d827f",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
