@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47ab6b40_bfed5ab5",
+        "filename": "infra-charts/templates/cpu-deviceplugin-daemonset.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-07-25T16:18:17Z",
+      "side": 1,
+      "message": "if we are touching it, we might as well just delete the connection blocks",
+      "revId": "3d1bfadeda4b102b08f86af632a2fccacc9cb024",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90938fff_e7db9379",
+        "filename": "infra-charts/templates/danm-webhook-ds.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-07-25T16:18:17Z",
+      "side": 1,
+      "message": "same",
+      "revId": "3d1bfadeda4b102b08f86af632a2fccacc9cb024",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
