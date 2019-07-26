@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5394c9d1_8633b23b",
+        "filename": "infra-charts/templates/cpu-deviceplugin-daemonset.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-26T08:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47ab6b40_bfed5ab5",
+      "revId": "3d1bfadeda4b102b08f86af632a2fccacc9cb024",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "90938fff_e7db9379",
         "filename": "infra-charts/templates/danm-webhook-ds.yaml",
         "patchSetId": 9
@@ -33,6 +51,24 @@
       "revId": "3d1bfadeda4b102b08f86af632a2fccacc9cb024",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24b2caad_16080793",
+        "filename": "infra-charts/templates/danm-webhook-ds.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-26T08:13:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90938fff_e7db9379",
+      "revId": "3d1bfadeda4b102b08f86af632a2fccacc9cb024",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
