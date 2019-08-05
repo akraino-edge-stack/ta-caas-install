@@ -43,10 +43,10 @@ custom_metrics_api:
 
 svcwatcher:
   required: true
-  container_version: {{ container_image_names | select('search', '/svcwatcher') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
+  container_version: {{ container_image_names | select('search', '/hyperdanm') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
 
 netwatcher:
-  container_version: {{ container_image_names | select('search', '/netwatcher') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
+  container_version: {{ container_image_names | select('search', '/hyperdanm') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
 
 cpupooler:
   required: true
@@ -61,7 +61,7 @@ cpupooler:
 
 danm_webhook:
   required: true
-  container_version: {{ container_image_names | select('search', '/danm-webhook') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
+  container_version: {{ container_image_names | select('search', '/hyperdanm') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
   webhook_ca_bundle: {{ webhooks_ca }}
   webhook_port: {{ caas.danm_webhook_port }}
   webhook_target_port: {{ caas.danm_webhook_target_port }}

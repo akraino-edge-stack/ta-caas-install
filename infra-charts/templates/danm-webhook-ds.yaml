@@ -37,7 +37,7 @@ spec:
         nodetype: caas_master
       containers:
         - name: danm-webhook
-          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/danm-webhook:{{ .Values.danm_webhook.container_version }}
+          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/hyperdanm:{{ .Values.danm_webhook.container_version }}
           command: [ "/usr/local/bin/webhook", "-tls-cert-bundle=/etc/webhook/certs/danm_webhook.crt", "-tls-private-key-file=/etc/webhook/certs/danm_webhook.key", "-bind-port={{ .Values.danm_webhook.webhook_target_port }}" ]
           imagePullPolicy: IfNotPresent
           volumeMounts:

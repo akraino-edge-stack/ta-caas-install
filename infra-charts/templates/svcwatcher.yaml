@@ -35,7 +35,7 @@ spec:
         nodetype: caas_master
       containers:
         - name: svcwatcher
-          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/svcwatcher:{{ .Values.svcwatcher.container_version }}
+          image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/hyperdanm:{{ .Values.svcwatcher.container_version }}
           args:
             - "--logtostderr"
           resources:

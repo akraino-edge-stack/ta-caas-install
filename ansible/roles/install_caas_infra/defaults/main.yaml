@@ -20,9 +20,7 @@ infra_chart_images:
   - metrics_server
   - prometheus
   - sriovdp
-  - svcwatcher
-  - netwatcher
   - fluentd
-  - danm-webhook
+  - hyperdanm
 infra_chart_separated_values:
   - fluentd
