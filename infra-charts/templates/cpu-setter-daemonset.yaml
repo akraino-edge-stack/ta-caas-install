@@ -36,7 +36,7 @@ spec:
       - name: cpu-setter
         image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/cpupooler:{{ .Values.cpupooler.container_version }}
         imagePullPolicy: IfNotPresent
-        command: [ "/cpu-setter", "--poolconfigs=/etc/cpu-pooler", "--cpusetroot=/sys/fs/cgroup/cpuset/kubepods/" ]
+        command: [ "/cpu-setter", "--poolconfigs=/etc/cpu-pooler", "--cpusetroot=/rootfs/sys/fs/cgroup/cpuset/kubepods/" ]
         resources:
           requests:
             cpu: "10m"
@@ -46,7 +46,7 @@ spec:
            readOnly: true
          - mountPath: /etc/cpu-pooler
            name: cpu-pooler-config
-         - mountPath: /sys/fs/cgroup/cpuset/kubepods/
+         - mountPath: /rootfs/sys/fs/cgroup/cpuset/kubepods/
            name: kubepods
          - mountPath: /var/lib/kubelet/device-plugins/
            name: checkpointfile
