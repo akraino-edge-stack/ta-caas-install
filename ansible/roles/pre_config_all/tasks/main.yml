@@ -138,6 +138,7 @@
     owner: "{{ caas.uid.elasticsearch }}"
     group: "{{ caas.uid.elasticsearch }}"
     state: directory
+    mode: 0700
   become_user: "root"
   when: (nodetype is defined) and (nodetype | search('caas_master'))
 
