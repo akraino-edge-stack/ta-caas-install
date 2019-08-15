@@ -34,6 +34,9 @@ spec:
       containers:
         - name: netwatcher
           image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/hyperdanm:{{ .Values.netwatcher.container_version }}
+          command:
+            - "/usr/local/bin/netwatcher"
+            - "--logtostderr"
           securityContext:
             capabilities:
               add:

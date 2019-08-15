@@ -36,7 +36,8 @@ spec:
       containers:
         - name: svcwatcher
           image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/hyperdanm:{{ .Values.svcwatcher.container_version }}
-          args:
+          command:
+            - "/usr/local/bin/svcwatcher"
             - "--logtostderr"
           resources:
             requests:
