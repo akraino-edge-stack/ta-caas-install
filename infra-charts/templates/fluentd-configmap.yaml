@@ -36,7 +36,6 @@ limitations under the License.
     <match kubernetes**>
        @type elasticsearch
        @log_level info
-       include_tag_key true
 {{- end }}
 {{- define "es_end.part" }}
        ssl_verify true
@@ -44,12 +43,6 @@ limitations under the License.
        logstash_format true
        reconnect_on_error true
        resurrect_after 5s
-       <buffer tag>
-          chunk_limit_size 256m
-          flush_at_shutdown true
-          flush_interval 5s
-          flush_thread_count 2
-       </buffer>
     </match>
 {{- end }}
 {{- define "remote_syslog.part" }}
@@ -63,10 +56,6 @@ limitations under the License.
        port 1025
        protocol tcp
 {{- end }}
-      <buffer>
-        chunk_limit_size 256m
-        flush_at_shutdown "true"
-      </buffer>
     </match>
 {{- end }}
 ---
