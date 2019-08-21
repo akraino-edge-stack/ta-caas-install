@@ -129,15 +129,12 @@ data:
     # limitations under the License.
 
     FS_LIMIT=80
-
     declare -i pcent=100
-
-
     while [ $pcent -ge $FS_LIMIT ]
     do
         pcent=`df --output=pcent /usr/share/elasticsearch/data | tail -n1 | tr -d '%'`
         if [ $pcent -le $FS_LIMIT ]; then exit; fi
-        oldest=`curl -s -XGET 'localhost:{{ .Values.elasticsearch.port }}/_cat/indices' | cut -d' ' -f3 | grep ^{{ .Values.elasticsearch.logstash_prefix }} | sort | head -n1`
+        oldest=`curl -s -XGET 'localhost:{{ .Values.elasticsearch.port }}/_cat/indices' | awk '{print $3}' | egrep '^.+-[[:digit:]]{4}\.[[:digit:]]{2}\.[[:digit:]]{2}$' | sort -t'-' -k2 | head -n1`
         curl -XDELETE "localhost:{{ .Values.elasticsearch.port }}/$oldest" >/dev/null
     done
 {{ end }}
