@@ -74,7 +74,6 @@ danmnet_default_network_id: flannel
 danmnet_default_network_type: flannel
 caas_chart_path: "{{ caas_base_directory }}/infra-charts"
 caas_policy_directory: "{{ caas_base_directory }}/policies"
-audit_log_file_size: 100
 kubernetes_service_url: kubernetes.default.svc
 prometheus_port: 9090
 prometheus_url: prometheus.kube-system.svc.{{ dns_domain }}
