@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad716bfc_1b0fc69f",
+        "filename": "infra-charts/templates/netwatcher.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-08-27T10:59:07Z",
+      "side": 1,
+      "message": "this was not the existing entrypoint of netwatcher.\nit does not uses glog, so the flag is not required. please revert.\n\nwhy was this change needed BTW?",
+      "revId": "3db56b654f20e4593956866672eb22b56d88015b",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
