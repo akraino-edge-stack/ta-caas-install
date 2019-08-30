@@ -78,6 +78,8 @@ kubernetes_service_url: kubernetes.default.svc
 prometheus_port: 9090
 prometheus_url: prometheus.kube-system.svc.{{ dns_domain }}
 prometheus: https://{{ prometheus_url }}:{{ prometheus_port }}
+prometheus_storage_size: "1Gi"
+prometheus_data_retention_hours: 1
 custom_metrics_api_port: 6443
 custom_metrics_api_serviceport: 443
 metrics_server_port: 443

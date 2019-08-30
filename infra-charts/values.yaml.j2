@@ -32,6 +32,10 @@ prometheus:
   prometheus_url: {{ caas.prometheus }}
   server_cert: {{ prometheus_cert_b64 }}
   server_key: {{ prometheus_cert_key_b64 }}
+  storage_size: {{ caas.prometheus_storage_size }}
+  data_retention: {{ caas.prometheus_data_retention_hours }}
+{# human_to_bytes handles decimal prefix as binary prefix #}
+  data_retension_size: {{ (caas.prometheus_storage_size | replace('i','') | human_to_bytes) * 0.8 / (1024 | pow(2) | int) }}MB
 
 custom_metrics_api:
   required: true

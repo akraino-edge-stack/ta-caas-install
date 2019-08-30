@@ -64,6 +64,8 @@ spec:
           readOnly: true
         - mountPath: /etc/prometheus
           name: prometheus-config
+        - mountPath: /data
+          name: prometheus-data
         livenessProbe:
           httpGet:
             path: /api/v1/status/config
@@ -94,4 +96,7 @@ spec:
               - key: supervisord.conf
                 path: supervisord.conf
                 mode: 0644
+        - name: prometheus-data
+          persistentVolumeClaim:
+            claimName: prometheus-pvc
 {{ end }}
