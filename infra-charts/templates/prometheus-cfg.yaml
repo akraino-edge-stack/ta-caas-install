@@ -184,6 +184,7 @@ data:
     http {
         server {
             listen                {{ .Values.prometheus.port }} ssl;
+            access_log /dev/stdout;
             ssl_certificate       /var/run/serving-cert/prometheus.crt;
             ssl_certificate_key   /var/run/serving-cert/prometheus.key;
             ssl_client_certificate /etc/openssl/ca.pem;
@@ -222,7 +223,11 @@ data:
     supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 
     [program:prometheus]
-    command=/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention=1h --web.listen-address=127.0.0.1:19090
+    command=/bin/prometheus
+      --config.file=/etc/prometheus/prometheus.yml
+      --storage.tsdb.path=/data
+      --storage.tsdb.retention={{ .Values.prometheus.data_retention }}h
+      --web.listen-address=127.0.0.1:19090
     startsecs=3
     startretries=1
     stopwaitsecs = 3
