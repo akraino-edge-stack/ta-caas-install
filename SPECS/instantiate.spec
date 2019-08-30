@@ -15,14 +15,14 @@
 %define COMPONENT instantiate
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 16
+%define RPM_MINOR_VERSION 17
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service instantiate playbooks
 License:        %{_platform_license}
-BuildArch:      x86_64
+BuildArch:      noarch
 Vendor:         %{_platform_vendor}
 Source0:        %{name}-%{version}.tar.gz
 
