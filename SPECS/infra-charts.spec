@@ -22,7 +22,7 @@ Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service helm charts
 License:        %{_platform_license}
-BuildArch:      x86_64
+BuildArch:      noarch
 Vendor:         %{_platform_vendor}
 Source0:        %{name}-%{version}.tar.gz
 
