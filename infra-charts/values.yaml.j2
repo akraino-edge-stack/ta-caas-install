@@ -1,3 +1,4 @@
+#jinja2: lstrip_blocks: True
 {#
 Copyright 2019 Nokia
 
@@ -32,6 +33,13 @@ prometheus:
   prometheus_url: {{ caas.prometheus }}
   server_cert: {{ prometheus_cert_b64 }}
   server_key: {{ prometheus_cert_key_b64 }}
+  storage_size: {{ caas.prometheus_storage_size }}
+  data_retention: {{ caas.prometheus_data_retention_hours }}
+{# human_to_bytes handles decimal prefix as binary prefix #}
+  {% set prometheus_storage_size_in_mbi = (caas.prometheus_storage_size | replace('i','') | human_to_bytes) %}
+  {% set prometheus_wal_size = (3 * 128) | human_to_bytes('MB') %}
+  {% set prometheus_db_size = ((prometheus_storage_size_in_mbi | int) * 0.8) - (prometheus_wal_size | int) %}
+  data_retension_size: {{ ((prometheus_db_size | int) / (1024 | pow(2))) | int }}MB
 
 custom_metrics_api:
   required: true
