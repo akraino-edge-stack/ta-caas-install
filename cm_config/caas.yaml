@@ -69,7 +69,6 @@ apiserver_secure_port: 6443
 apiserver_svc_port: 443
 default_partition_size: 16
 danmnet_default_name: default
-danmnet_default_namespace: kube-system
 danmnet_default_network_id: flannel
 danmnet_default_network_type: flannel
 caas_chart_path: "{{ caas_base_directory }}/infra-charts"
