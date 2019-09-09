@@ -69,7 +69,7 @@ spec:
         - name: DISCOVERY_SERVICE
           value: {{ .Values.elasticsearch.url }}
         - name: ES_JAVA_OPTS
-          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true"
+          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true -Dnogclog"
         {{- range $key, $value :=  .Values.elasticsearch.env }}
         - name: {{ $key }}
           value: {{ $value | quote }}
@@ -103,6 +103,9 @@ spec:
         - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           name: elasticsearch-config
           subPath: elasticsearch.yml
+        - mountPath: /usr/share/elasticsearch/config/log4j2.properties
+          name: elasticsearch-config
+          subPath: log4j2.properties
         - mountPath: /etc/supervisord.conf
           name: supervisord-config
           subPath: supervisord.conf
@@ -116,6 +119,9 @@ spec:
             items:
               - key: elasticsearch.yml
                 path: elasticsearch.yml
+                mode: 0644
+              - key: log4j2.properties
+                path: log4j2.properties
                 mode: 0644
         - name: supervisord-config
           configMap:
