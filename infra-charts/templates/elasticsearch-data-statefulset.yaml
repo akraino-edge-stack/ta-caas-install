@@ -108,12 +108,18 @@ spec:
         - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           name: elasticsearch-config
           subPath: elasticsearch.yml
+        - mountPath: /usr/share/elasticsearch/config/log4j2.properties
+          name: elasticsearch-config
+          subPath: log4j2.properties
         - mountPath: /etc/supervisord.conf
           name: supervisord-config
           subPath: supervisord.conf
-        - mountPath: /etc/cron.hourly/elasticsearch-logrotate
+        - mountPath: /etc/cron.hourly/elasticsearch-logrotate.sh
           name: elasticsearch-logrotate
-          subPath: elasticsearch-logrotate
+          subPath: elasticsearch-logrotate.sh
+        - mountPath: /usr/share/elasticsearch/elasticsearch-setindex.sh
+          name: elasticsearch-setindex
+          subPath: elasticsearch-setindex.sh
       terminationGracePeriodSeconds: {{ .Values.elasticsearch.data.terminationGracePeriodSeconds }}
       volumes:
         - name: time-mount
@@ -126,6 +132,9 @@ spec:
               - key: elasticsearch.yml
                 path: elasticsearch.yml
                 mode: 0644
+              - key: log4j2.properties
+                path: log4j2.properties
+                mode: 0644
         - name: supervisord-config
           configMap:
             name: elasticsearch
@@ -137,8 +146,15 @@ spec:
           configMap:
             name: elasticsearch
             items:
-              - key: elasticsearch-logrotate
-                path: elasticsearch-logrotate
+              - key: elasticsearch-logrotate.sh
+                path: elasticsearch-logrotate.sh
+                mode: 0755
+        - name: elasticsearch-setindex
+          configMap:
+            name: elasticsearch
+            items:
+              - key: elasticsearch-setindex.sh
+                path: elasticsearch-setindex.sh
                 mode: 0755
         - name: data
           hostPath:
