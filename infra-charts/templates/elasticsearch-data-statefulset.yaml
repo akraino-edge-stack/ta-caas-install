@@ -74,7 +74,7 @@ spec:
             resourceFieldRef:
               resource: limits.cpu
         - name: ES_JAVA_OPTS
-          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true"
+          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true -Dnogclog"
         {{- range $key, $value :=  .Values.elasticsearch.env }}
         - name: {{ $key }}
           value: {{ $value | quote }}
@@ -111,9 +111,12 @@ spec:
         - mountPath: /etc/supervisord.conf
           name: supervisord-config
           subPath: supervisord.conf
-        - mountPath: /etc/cron.hourly/elasticsearch-logrotate
-          name: elasticsearch-logrotate
-          subPath: elasticsearch-logrotate
+        - mountPath: /etc/cron.hourly/elasticsearch-logrotate.sh
+          name: elasticsearch-logrotate.sh
+          subPath: elasticsearch-logrotate.sh
+        - mountPath: /usr/share/elasticsearch/elasticsearch-setindex.sh
+          name: elasticsearch-setindex.sh
+          subPath: elasticsearch-setindex.sh
       terminationGracePeriodSeconds: {{ .Values.elasticsearch.data.terminationGracePeriodSeconds }}
       volumes:
         - name: time-mount
@@ -133,12 +136,19 @@ spec:
               - key: supervisord.conf
                 path: supervisord.conf
                 mode: 0644
-        - name: elasticsearch-logrotate
+        - name: elasticsearch-logrotate.sh
           configMap:
             name: elasticsearch
             items:
-              - key: elasticsearch-logrotate
-                path: elasticsearch-logrotate
+              - key: elasticsearch-logrotate.sh
+                path: elasticsearch-logrotate.sh
+                mode: 0755
+        - name: elasticsearch-setindex.sh
+          configMap:
+            name: elasticsearch
+            items:
+              - key: elasticsearch-setindex.sh
+                path: elasticsearch-setindex.sh
                 mode: 0755
         - name: data
           hostPath:
