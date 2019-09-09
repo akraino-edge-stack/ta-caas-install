@@ -89,11 +89,13 @@ spec:
             cpu: "100m"
             memory: "{{ .Values.elasticsearch.memory_request }}"
         readinessProbe:
-          tcpSocket:
+          httpGet:
+            path: /_cluster/health?local=true
             port: {{ .Values.elasticsearch.port }}
           initialDelaySeconds: 5
         livenessProbe:
-          tcpSocket:
+          httpGet:
+            path: /_cluster/health?local=true
             port: {{ .Values.elasticsearch.port }}
           initialDelaySeconds: 60
           timeoutSeconds: 5
@@ -111,9 +113,6 @@ spec:
         - mountPath: /etc/supervisord.conf
           name: supervisord-config
           subPath: supervisord.conf
-        - mountPath: /etc/cron.hourly/elasticsearch-logrotate
-          name: elasticsearch-logrotate
-          subPath: elasticsearch-logrotate
       terminationGracePeriodSeconds: {{ .Values.elasticsearch.data.terminationGracePeriodSeconds }}
       volumes:
         - name: time-mount
@@ -133,13 +132,6 @@ spec:
               - key: supervisord.conf
                 path: supervisord.conf
                 mode: 0644
-        - name: elasticsearch-logrotate
-          configMap:
-            name: elasticsearch
-            items:
-              - key: elasticsearch-logrotate
-                path: elasticsearch-logrotate
-                mode: 0755
         - name: data
           hostPath:
             path: /var/log/elasticsearch
