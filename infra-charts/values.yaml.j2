@@ -19,6 +19,7 @@ registry_url: {{ caas.registry_url }}:{{ caas.registry_port }}
 registry_reponame: "{{ caas.registry_repo }}"
 domain: "{{ caas.dns_domain }}"
 apiserver_service_name: {{ caas.apiserver_service_name }}
+kubelet_root_dir: {{ caas.kubelet_root_directory }}
 
 metrics_server:
   required: true
