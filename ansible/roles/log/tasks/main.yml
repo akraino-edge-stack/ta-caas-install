@@ -1,0 +1,54 @@
+---
+# Copyright 2019 Nokia
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: create logrotate directory
+  file:
+    path: "/etc/logrotate.d/"
+    state: directory
+  become: true
+  become_user: "root"
+
+- name: create the kubelet plugins log directory
+  file:
+    path: "{{ caas.kubelet_plugins_log_dir }}"
+    state: directory
+  become: true
+  become_user: "root"
+
+- name: template kubelet-plugins to logrotate directory
+  template:
+    src: kubelet-plugins
+    dest: /etc/logrotate.d/kubelet-plugins
+    mode: 0640
+  become: true
+  become_user: "root"
+
+- name: Check if syslog contains the necessary modifications
+  shell: "grep "#CaaS CUSTOM BEGIN" /etc/logrotate.d/syslog"
+  register: caas_custom_log
+  failed_when: caas_custom_log.rc is not defined
+  become: true
+  become_user: "root"
+
+- name: Set caas custom logratate for syslog
+  shell: "sed -i.bak -e '/.*missingok/i #CaaS CUSTOM BEGIN\n    hourly\n    size 50\n#CaaS CUSTOM END' /etc/logrotate.d/syslog"
+  when: caas_custom_log.rc != 0
+  become: true
+  become_user: "root"
+
+- name: daemon reload
+  command: /usr/bin/systemctl daemon-reload
+  become: true
+  become_user: "root"
