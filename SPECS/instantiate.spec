@@ -56,6 +56,8 @@ rsync -av ansible/roles/docker_image_push %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/manifests %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/nodeconf %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/pre_config_all %{buildroot}/%{_roles_path}/
+rsync -av ansible/roles/log %{buildroot}/%{_roles_path}/
+
 
 mkdir -p %{buildroot}%/%{_bootstrapping_path}/
 
