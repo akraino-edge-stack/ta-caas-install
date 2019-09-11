@@ -1,4 +1,4 @@
-{{ kubelet_plugings_log_dir }}/*.log {
+"{{ caas.kubelet_plugins_log_dir }}"/*.log {
     rotate 20
     maxage 30
     missingok
@@ -6,17 +6,17 @@
   }
 
 # TODO: clean up config when logrotate 3.10 is available https://superuser.com/questions/1059033/logrotate-wildcard-fails-on-missing-files-with-missingok-and-olddir
-# TODO: check /var/lib/kubelet/plugins/**/*.log with newer version of logrotate
-/var/lib/kubelet/plugins/*log /var/lib/kubelet/plugins/*/*log /var/lib/kubelet/plugins/*/*/*log /var/lib/kubelet/plugins/*/*/*/*log {
+# TODO: check "{{ caas.kubelet_root_directory }}"/plugins/**/*.log with newer version of logrotate
+"{{ caas.kubelet_root_directory }}"/plugins/*log "{{ caas.kubelet_root_directory }}"/plugins/*/*log "{{ caas.kubelet_root_directory }}"/plugins/*/*/*log "{{ caas.kubelet_root_directory }}"/plugins/*/*/*/*log {
     size 100M
     missingok
     copytruncate
     sharedscripts
     postrotate
-      rotated_logs="$(find /var/lib/kubelet/plugins -name '*.log.[1-20]')"
+      rotated_logs="$(find "{{ caas.kubelet_root_directory }}"/plugins -name '*.log.[1-20]')"
       for file in $rotated_logs; do
         log_file_name="$(basename $file | sed -r 's/.[0-9]+$//')"
-        mv $file {{ kubelet_plugings_log_dir }}/$log_file_name
+        mv $file "{{ caas.kubelet_plugins_log_dir }}"/$log_file_name
       done
     endscript
   }
