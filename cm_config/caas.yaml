@@ -16,6 +16,8 @@
 salt: malaise68Adroitness44Gradate45Probe41Settle46Newsweek93restrict8Thirsty35abused9Pluperfect
 max_login_time: 30
 max_parallel_session: 15
+kubelet_root_directory: "/home/kubelet"
+kubelet_plugins_log_dir: "/var/log/kubelet-plugins/"
 ansible_success: 'Ansible deploy END success'
 docker_directory: /var/lib/docker
 cert_directory: /etc/docker
