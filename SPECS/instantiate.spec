@@ -15,7 +15,7 @@
 %define COMPONENT instantiate
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 14
+%define RPM_MINOR_VERSION 15
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -56,6 +56,8 @@ rsync -av ansible/roles/docker_image_push %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/manifests %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/nodeconf %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/pre_config_all %{buildroot}/%{_roles_path}/
+rsync -av ansible/roles/log %{buildroot}/%{_roles_path}/
+
 
 mkdir -p %{buildroot}%/%{_bootstrapping_path}/
 
