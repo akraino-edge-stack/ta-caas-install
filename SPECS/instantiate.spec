@@ -15,7 +15,7 @@
 %define COMPONENT instantiate
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 14
+%define RPM_MINOR_VERSION 15
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -103,7 +103,7 @@ ln -sf %{_playbooks_path}/openrc_hack.yaml      %{_postconfig_path}/
 ln -sf %{_playbooks_path}/pre_config_all.yaml   %{_postconfig_path}/
 
 mkdir -p %{_finalize_path}/
-ln -sf %{_playbooks_path}/caas_cleanup.yaml     %{_finalize_path}/
+ln -sf %{_playbooks_path}/caas_cleanup.yaml     %{_finalize_path}/
 
 %postun
 if [ $1 -eq 0 ]; then
