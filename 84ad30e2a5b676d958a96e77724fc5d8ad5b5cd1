@@ -33,6 +33,24 @@
       "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7b90fe4_293551b5",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-09-13T15:04:48Z",
+      "side": 1,
+      "message": "But this is a constant. I used a variable to shorten the code below.\nIf we move this script to the container, we lose the configurability anyway.",
+      "parentUuid": "db6c828c_5c6a5d95",
+      "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
