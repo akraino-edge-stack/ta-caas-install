@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "538385af_6b8ad6ab",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-09-13T14:35:15Z",
+      "side": 1,
+      "message": "why not just build the shell script into the container? I\u0027m kind of against treating code as configuration",
+      "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db6c828c_5c6a5d95",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-09-13T14:35:15Z",
+      "side": 1,
+      "message": "let\u0027s not hard-code URLs into code",
+      "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
