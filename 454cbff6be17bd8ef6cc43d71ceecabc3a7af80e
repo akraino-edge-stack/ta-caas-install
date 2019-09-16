@@ -34,6 +34,24 @@
       "revId": "454cbff6be17bd8ef6cc43d71ceecabc3a7af80e",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6bd4865_8b60fbdf",
+        "filename": "infra-charts/templates/elasticsearch-data-statefulset.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-09-16T14:59:50Z",
+      "side": 1,
+      "message": "ah I see. I don\u0027t know how I feel about this feature :D\nbut well, let\u0027s see how it goes in production",
+      "parentUuid": "1c74da2e_c3f5c02b",
+      "revId": "454cbff6be17bd8ef6cc43d71ceecabc3a7af80e",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
