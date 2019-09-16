@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a95531b_3f445ff6",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-09-16T07:34:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "538385af_6b8ad6ab",
+      "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db6c828c_5c6a5d95",
         "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
         "patchSetId": 5
@@ -69,6 +87,24 @@
       "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e33c6bf0_ccd49309",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-09-16T07:34:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1db3ebbf_a8d96b63",
+      "revId": "84ad30e2a5b676d958a96e77724fc5d8ad5b5cd1",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
