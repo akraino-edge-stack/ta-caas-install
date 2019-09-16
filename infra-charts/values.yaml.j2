@@ -40,6 +40,7 @@ custom_metrics_api:
   container_version: {{ container_image_names | select('search', '/custom_metrics') | list | last | regex_replace('.*:([\\w\\-_\\.]+)$', '\\1') }}
   server_cert: {{ metrics_cert_b64 }}
   server_key: {{ metrics_cert_key_b64 }}
+  ca_bundle: {{ webhooks_ca }}
 
 svcwatcher:
   required: true
