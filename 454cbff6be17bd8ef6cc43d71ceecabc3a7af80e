@@ -16,6 +16,24 @@
       "revId": "454cbff6be17bd8ef6cc43d71ceecabc3a7af80e",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c74da2e_c3f5c02b",
+        "filename": "infra-charts/templates/elasticsearch-data-statefulset.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-09-16T14:31:16Z",
+      "side": 1,
+      "message": "It is defined in the ES Pod. I guess it is automatically created by K8S Service.",
+      "parentUuid": "690da99f_7588267a",
+      "revId": "454cbff6be17bd8ef6cc43d71ceecabc3a7af80e",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
