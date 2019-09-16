@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "690da99f_7588267a",
+        "filename": "infra-charts/templates/elasticsearch-data-statefulset.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-09-16T14:19:32Z",
+      "side": 1,
+      "message": "aren\u0027t you missing an \"ELASTICSEARCH_LOGGING_SERVICE_PORT\" from the manifests?",
+      "revId": "454cbff6be17bd8ef6cc43d71ceecabc3a7af80e",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
