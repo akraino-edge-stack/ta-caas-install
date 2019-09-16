@@ -86,7 +86,8 @@ spec:
             port: {{ .Values.elasticsearch.port }}
           initialDelaySeconds: 5
         livenessProbe:
-          tcpSocket:
+          httpGet:
+            path: /_cluster/health?local=true
             port: {{ .Values.elasticsearch.port }}
           initialDelaySeconds: 60
           timeoutSeconds: 5
