@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a21fc0e_97615078",
+        "filename": "ansible/roles/log/tasks/main.yml",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-09-17T16:33:22Z",
+      "side": 1,
+      "message": "I tested it without this and got syslog file with double customization. So something like this:\n...\n/var/log/spooler\n{\n#CaaS CUSTOM BEGIN\n    hourly\n    size 50\n#CaaS CUSTOM END\n# BEGIN ANSIBLE MANAGED BLOCK\n#CaaS CUSTOM BEGIN\n    hourly\n    size 50\n#CaaS CUSTOM END\n# END ANSIBLE MANAGED BLOCK\n    missingok\n    sharedscripts\n...\n\nSo, in theory, yes it manages in practice nope.",
+      "parentUuid": "10332bd7_6d632e0d",
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad12ba66_3bffc51b",
         "filename": "ansible/roles/log/tasks/main.yml",
         "patchSetId": 14
@@ -88,6 +106,30 @@
       "writtenOn": "2019-09-17T16:03:25Z",
       "side": 1,
       "message": "Are these configs still needed?",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 51,
+        "endChar": 17
+      },
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b604a386_132f1aa6",
+        "filename": "ansible/roles/log/tasks/main.yml",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-09-17T16:33:22Z",
+      "side": 1,
+      "message": "It doesn\u0027t hurt.",
+      "parentUuid": "ce18cd69_b15a6f9e",
       "range": {
         "startLine": 50,
         "startChar": 10,
