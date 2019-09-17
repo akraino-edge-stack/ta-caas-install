@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c60b9f6a_86460b25",
+        "filename": "ansible/roles/log/tasks/main.yml",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-09-17T14:09:06Z",
+      "side": 1,
+      "message": "This is just the caas-utils.rpm logging content. I moved to caas-instantiate.rpm. The logging uses the kubelet_root_dir and since the path is available at ansible runtime I decided to move it here (or I could read up the caas.yaml file on the fly while building the utils.rpm)\nBut not sure it is a better strategy.\nThis review aims only adding the kubelet root directory as a parameter.\nThe other (java/elastic/root disk fils up) points are not forgotten, but I wanted to create separate reviews for them.",
+      "parentUuid": "47ed604d_7a16a4d5",
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f578b4c1_f11de210",
         "filename": "infra-charts/templates/sriovdp-ds.yaml",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2019-09-17T13:03:51Z",
       "side": 1,
       "message": "SR-IOV and CPU Pooler TCs shall be re-executed before this can be merged",
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c9fcb4c_ae7b969f",
+        "filename": "infra-charts/templates/sriovdp-ds.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 185
+      },
+      "writtenOn": "2019-09-17T14:09:06Z",
+      "side": 1,
+      "message": "Agreed, image building is on the way. But found other issues on the way",
+      "parentUuid": "f578b4c1_f11de210",
       "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
