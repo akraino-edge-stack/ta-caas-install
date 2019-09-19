@@ -1,3 +1,4 @@
+#jinja2: lstrip_blocks: True
 {#
 Copyright 2019 Nokia
 
@@ -13,6 +14,24 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 #}
+{%- macro make_host_devices(devices, provider_network) %}
+  {% for device in devices %}
+- name: {{ device }}
+  {{ make_vni_config(provider_network) | indent(2) }}
+  {% endfor %}
+{% endmacro -%}
+
+{%- macro make_vni_config(provider_network) %}
+  {% set vlan_ranges = provider_network.get('vlan_ranges', '') %}
+  {% set vxlan_ranges = provider_network.get('vxlan_ranges', '') %}
+  {% if vlan_ranges %}
+vniType: vlan
+vniRange: {{ vlan_ranges | replace(':', '-') }}
+  {% elif vxlan_ranges %}
+vniType: vxlan
+vniRange: {{ vxlan_ranges | replace(':', '-') }}
+  {% endif %}
+{% endmacro -%}
 ---
 kubernetes_component_label: {{ caas.kubernetes_component_label }}
 registry_url: {{ caas.registry_url }}:{{ caas.registry_port }}
@@ -59,6 +78,28 @@ cpupooler:
   webhook_port: {{ caas.webhook_port }}
   cpu_poolconfigs:
     {{ ansible_local['cpu_pooler_config'] | default([]) | to_nice_yaml | indent(4) }}
+
+danm:
+  host_devices:
+{% caas_tenant_networks = caas.get('tenant_networks', []) %}
+{% if all_attached_caas_provider_network_profiles and caas_tenant_networks %}
+  {% for profile_name in all_attached_caas_provider_network_profiles %}
+    {% set profile = network_profiles[profile_name] %}
+    {% set caas_provider_networks = profile.get('provider_network_interfaces', {}) | filter_provider_networks_by_type('caas') %}
+    {% set caas_sriov_provider_networks = profile.get('sriov_provider_networks', {}) | filter_provider_networks_by_type('caas') %}
+    {% for tenant_network in caas_tenant_networks %}
+      {% if tenant_network in caas_provider_networks | get_provider_networks %}
+    {{ make_host_devices(caas_provider_networks.keys(), networking['provider_networks'][tenant_network]) | indent(4) -}}
+      {% elif tenant_network in caas_sriov_provider_networks %}
+        {% set sriov_interaces = caas_sriov_provider_networks | extract_sriov_provider_network_interfaces %}
+        {% set sriov_device_pools = sriov_interaces | map('regex_replace', '(.*)', 'nokia.k8s.io/sriov_\\1') | list %}
+    {{ make_host_devices(sriov_device_pools, networking['provider_networks'][tenant_network]) | indent(4) -}}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{%- else %}
+ []
+{% endif %}
 
 danm_webhook:
   required: true
