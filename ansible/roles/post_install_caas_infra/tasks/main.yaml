@@ -12,25 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+- name: template DANM tenant configs
+  template:
+    src: "danm_tenant_config.yaml.j2"
+    dest: "{{ caas.manifests_directory }}/danm-tenant-config.yaml"
 
-# cmframework.requires: helm.yaml
-- hosts: caas_master
-  strategy: free
-  become: true
-  become_user: "{{ users.admin_user_name }}"
-  roles:
-    - pre_install_caas_infra
-
-- hosts: installation_controller:&caas_master
-  strategy: free
-  become: true
-  become_user: "{{ users.admin_user_name }}"
-  roles:
-    - install_caas_infra
-
-- hosts: caas_master
-  strategy: free
-  become: true
-  become_user: "{{ users.admin_user_name }}"
-  roles:
-    - post_install_caas_infra
+- name: create DANM tenant configs
+  kubectl:
+    manifest: "{{ caas.manifests_directory }}/danm-tenant-config.yaml"
+    state: present

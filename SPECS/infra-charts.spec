@@ -15,7 +15,7 @@
 %define COMPONENT infra-charts
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 29
+%define RPM_MINOR_VERSION 30
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -44,6 +44,7 @@ rsync -av ansible/playbooks/infra_chart_reconfig_fluentd.yaml %{buildroot}/%{_pl
 mkdir -p %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/install_caas_infra %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/pre_install_caas_infra %{buildroot}/%{_roles_path}/
+rsync -av ansible/roles/post_install_caas_infra %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/infra_chart_reconfig %{buildroot}/%{_roles_path}/
 
 mkdir -p %{buildroot}/%{_caas_chart_path}/
