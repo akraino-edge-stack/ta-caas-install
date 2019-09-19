@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "282e5a3c_d51b0459",
+        "filename": "ansible/roles/log/tasks/main.yml",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-09-19T10:30:49Z",
+      "side": 1,
+      "message": "\u003e I tested it without this and got syslog file with double customization. So something like this:\n\u003e ...\n\u003e /var/log/spooler\n\u003e {\n\u003e #CaaS CUSTOM BEGIN\n\u003e     hourly\n\u003e     size 50\n\u003e #CaaS CUSTOM END\n\u003e # BEGIN ANSIBLE MANAGED BLOCK\n\u003e #CaaS CUSTOM BEGIN\n\u003e     hourly\n\u003e     size 50\n\u003e #CaaS CUSTOM END\n\u003e # END ANSIBLE MANAGED BLOCK\n\u003e     missingok\n\u003e     sharedscripts\n\u003e ...\n\u003e \n\u003e So, in theory, yes it manages in practice nope.\n\nAs we discussed offline, this behavior caused by a side effect.",
+      "parentUuid": "7a21fc0e_97615078",
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad12ba66_3bffc51b",
         "filename": "ansible/roles/log/tasks/main.yml",
         "patchSetId": 14
@@ -139,6 +157,30 @@
       "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02b80499_9563c6b3",
+        "filename": "ansible/roles/log/tasks/main.yml",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-09-19T10:30:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b604a386_132f1aa6",
+      "range": {
+        "startLine": 50,
+        "startChar": 10,
+        "endLine": 51,
+        "endChar": 17
+      },
+      "revId": "bb0f6f3852ec466a96350b862b79058baf11d2f8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     },
     {
       "key": {
