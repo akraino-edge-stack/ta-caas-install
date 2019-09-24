@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "719a09c0_8d62baed",
+        "filename": "infra-charts/templates/danm_tenant_config.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-09-24T08:40:10Z",
+      "side": 1,
+      "message": "You should have helm.sh/hook-delete-policy also\n\n+1, spec version bump",
+      "revId": "396bb6f135dbc9d74f2f04f2771ea4c1b8017414",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
