@@ -16,6 +16,24 @@
       "revId": "76eeda3d6209de2bccfa1eda46680bd2b7b67d75",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae5be770_29a90c25",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-09-27T14:13:58Z",
+      "side": 1,
+      "message": "\u003e nope\n\u003e I\u0027m also not sure I even like the Helm chart approach for this\n\u003e operator can directly change object itself post-deploy if he wishes to. I don\u0027t think it requires LCM\n\u003e \n\u003e the only requirement is to instantiate it after the webhook is running\n\u003e \n\u003e even if you would like to leave it in Helm, templating and scripting goes to the YAML file, not into the config\n\nThis will need either an async task, which is waiting for the availability of DANM webhook, or an ansible role depends on infra-chart installation.\n\nThe scripting uses multiple datastructures, which is hard to pass to helm templating level. Although the logic can be moved to ansible tasks, to make cleaner this template file.",
+      "parentUuid": "6d943d66_5139da07",
+      "revId": "76eeda3d6209de2bccfa1eda46680bd2b7b67d75",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
