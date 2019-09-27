@@ -64,8 +64,8 @@ mkdir -p %{KUBELET_PLUGINS_LOGDIR}/
 grep "#CaaS CUSTOM BEGIN" /etc/logrotate.d/syslog > /dev/null;
 if [ $? -eq 0 ]; then
   sed -i -e '/#CaaS CUSTOM BEGIN/,/#CaaS CUSTOM END/d' /etc/logrotate.d/syslog
-  fi
-sed -i.bak -e '/.*missingok/i #CaaS CUSTOM BEGIN\n    hourly\n    size 50\n#CaaS CUSTOM END' /etc/logrotate.d/syslog
+fi
+sed -i -e '/.*missingok/i #CaaS CUSTOM BEGIN\n    hourly\n    size 50\n#CaaS CUSTOM END' /etc/logrotate.d/syslog
 # --------------------------- DEPLOY
 find /usr/lib/debug/usr/ -xtype l -exec rm -f {} \;
 # --------------------------- COMMON
