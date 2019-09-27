@@ -16,6 +16,24 @@
       "revId": "396bb6f135dbc9d74f2f04f2771ea4c1b8017414",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab2cd376_d6393509",
+        "filename": "infra-charts/templates/danm_tenant_config.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-09-27T08:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "719a09c0_8d62baed",
+      "revId": "396bb6f135dbc9d74f2f04f2771ea4c1b8017414",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
