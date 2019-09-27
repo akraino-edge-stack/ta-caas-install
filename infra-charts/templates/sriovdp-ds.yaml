@@ -32,6 +32,7 @@ spec:
         name: sriovdp
     spec:
       priorityClassName: "system-node-critical"
+      hostNetwork: true
       nodeSelector:
         sriov: enabled
       containers:
@@ -51,7 +52,7 @@ spec:
         - mountPath: /var/lib/kubelet/device-plugins/
           name: devicesock
           readOnly: false
-        - mountPath: /sys/class/net/
+        - mountPath: /sys/
           name: sysfs
           readOnly: true
         - name: sriovdp-config
@@ -77,7 +78,7 @@ spec:
           path: /var/lib/kubelet/device-plugins/
       - name: sysfs
         hostPath:
-          path: /sys/class/net/
+          path: /sys/
       - name: sriovdp-config
         hostPath:
           path: /etc/pcidp/
