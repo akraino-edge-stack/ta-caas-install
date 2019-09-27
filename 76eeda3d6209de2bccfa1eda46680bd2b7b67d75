@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d943d66_5139da07",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-09-27T13:09:03Z",
+      "side": 1,
+      "message": "nope\nI\u0027m also not sure I even like the Helm chart approach for this\noperator can directly change object itself post-deploy if he wishes to. I don\u0027t think it requires LCM\n\nthe only requirement is to instantiate it after the webhook is running\n\neven if you would like to leave it in Helm, templating and scripting goes to the YAML file, not into the config",
+      "revId": "76eeda3d6209de2bccfa1eda46680bd2b7b67d75",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
