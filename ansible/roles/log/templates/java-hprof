@@ -1,0 +1,7 @@
+"{{ caas.kubelet_root_directory }}"/*.hprof "{{ caas.kubelet_root_directory }}"/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*/*/*hprof {
+    rotate 10
+    maxage 30
+    missingok
+    compress
+  }
+
