@@ -62,7 +62,7 @@ spec:
         - name: NODE_DATA
           value: "true"
         - name: ES_JAVA_OPTS
-          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true"
+          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true -XX:HeapDumpPath=/dev/null"
         {{- range $key, $value :=  .Values.elasticsearch.env }}
         - name: {{ $key }}
           value: {{ $value | quote }}

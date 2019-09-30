@@ -35,6 +35,14 @@
   become: true
   become_user: "root"
 
+- name: template java-hprof to logrotate directory
+  template:
+    src: java-hprof
+    dest: /etc/logrotate.d/java-hprof
+    mode: 0640
+  become: true
+  become_user: "root"
+
 - name: Ansible insert a line before example
   blockinfile:
     dest: /etc/logrotate.d/syslog

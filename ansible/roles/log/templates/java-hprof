@@ -1,0 +1,6 @@
+"{{ caas.kubelet_root_directory }}"/*.hprof "{{ caas.kubelet_root_directory }}"/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*/*hprof "{{ caas.kubelet_root_directory }}"/*/*/*/*/*hprof {
+    maxage 30
+    maxsize 5G
+    missingok
+  }
+
