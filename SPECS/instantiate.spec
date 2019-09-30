@@ -15,7 +15,7 @@
 %define COMPONENT instantiate
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 19
+%define RPM_MINOR_VERSION 20
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
