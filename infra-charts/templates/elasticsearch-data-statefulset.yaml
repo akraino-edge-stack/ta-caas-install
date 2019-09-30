@@ -78,7 +78,7 @@ spec:
             resourceFieldRef:
               resource: limits.cpu
         - name: ES_JAVA_OPTS
-          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true"
+          value: "-Xms{{ .Values.elasticsearch.java_heap_request }} -Xmx{{ .Values.elasticsearch.java_heap_max }} -Dmapper.allow_dots_in_name=true -XX:HeapDumpPath=/dev/null"
         {{- range $key, $value :=  .Values.elasticsearch.env }}
         - name: {{ $key }}
           value: {{ $value | quote }}
@@ -138,5 +138,5 @@ spec:
                 mode: 0644
         - name: data
           hostPath:
-            path: /var/log/elasticsearch
+            path: /var/log/elasticsearch/data
 {{ end }}
