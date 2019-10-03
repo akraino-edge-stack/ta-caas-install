@@ -14,7 +14,7 @@
 # limitations under the License.
 - name: template DANM tenant configs
   template:
-    src: "danm_tenant_config.yaml.j2"
+    src: "danm-tenant-config.yaml.j2"
     dest: "{{ caas.manifests_directory }}/danm-tenant-config.yaml"
 
 - name: create DANM tenant configs
