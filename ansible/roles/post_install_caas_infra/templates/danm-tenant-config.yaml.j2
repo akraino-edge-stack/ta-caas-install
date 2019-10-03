@@ -39,7 +39,7 @@ kind: TenantConfig
 metadata:
   name: danm-tenant-config
 hostDevices:
-{% caas_tenant_networks = caas.get('tenant_networks', []) %}
+{% set caas_tenant_networks = caas.get('tenant_networks', []) %}
 {% if all_attached_caas_provider_network_profiles and caas_tenant_networks %}
   {% for profile_name in all_attached_caas_provider_network_profiles %}
     {% set profile = network_profiles[profile_name] %}
