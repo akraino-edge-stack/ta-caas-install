@@ -26,6 +26,10 @@ metadata:
 spec:
   serviceName: elasticsearch-data
   replicas: {{ .Values.elasticsearch.data.replicas }}
+  selector:
+    matchLabels:
+      app: elasticsearch-data
+      component: "{{ .Values.elasticsearch.data.name }}"
   template:
     metadata:
       labels:
