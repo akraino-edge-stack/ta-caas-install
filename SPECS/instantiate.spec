@@ -15,7 +15,7 @@
 %define COMPONENT instantiate
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 20
+%define RPM_MINOR_VERSION 21
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
@@ -45,6 +45,7 @@ rsync -av ansible/playbooks/docker.yaml %{buildroot}/%{_playbooks_path}/
 rsync -av ansible/playbooks/image_push.yaml %{buildroot}/%{_playbooks_path}/
 rsync -av ansible/playbooks/openrc_hack.yaml %{buildroot}/%{_playbooks_path}/
 rsync -av ansible/playbooks/pre_config_all.yaml %{buildroot}/%{_playbooks_path}/
+rsync -av ansible/playbooks/set_nodes_label.yaml %{buildroot}/%{_playbooks_path}/
 
 mkdir -p %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/caas_cleanup %{buildroot}/%{_roles_path}/
@@ -57,6 +58,7 @@ rsync -av ansible/roles/manifests %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/nodeconf %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/pre_config_all %{buildroot}/%{_roles_path}/
 rsync -av ansible/roles/log %{buildroot}/%{_roles_path}/
+rsync -av ansible/roles/set_nodes_label %{buildroot}/%{_roles_path}/
 
 
 mkdir -p %{buildroot}%/%{_bootstrapping_path}/
@@ -103,6 +105,7 @@ ln -sf %{_playbooks_path}/docker.yaml           %{_postconfig_path}/
 ln -sf %{_playbooks_path}/image_push.yaml       %{_postconfig_path}/
 ln -sf %{_playbooks_path}/openrc_hack.yaml      %{_postconfig_path}/
 ln -sf %{_playbooks_path}/pre_config_all.yaml   %{_postconfig_path}/
+ln -sf %{_playbooks_path}/set_nodes_label.yaml  %{_postconfig_path}/
 
 mkdir -p %{_finalize_path}/
 ln -sf %{_playbooks_path}/caas_cleanup.yaml     %{_finalize_path}/
@@ -115,6 +118,7 @@ if [ $1 -eq 0 ]; then
     rm -f %{_postconfig_path}/image_push.yaml
     rm -f %{_postconfig_path}/openrc_hack.yaml
     rm -f %{_postconfig_path}/pre_config_all.yaml
+    rm -f %{_postconfig_path}/set_nodes_label.yaml
     rm -f %{_finalize_path}/caas_cleanup.yaml
 fi
 
