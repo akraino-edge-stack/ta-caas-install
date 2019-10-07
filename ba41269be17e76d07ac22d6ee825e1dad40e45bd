@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96e0cfd1_580bbe44",
+        "filename": "ansible/roles/set_nodes_label/tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-10-07T09:08:54Z",
+      "side": 1,
+      "message": "The node role is available in CM, so it should come from there.",
+      "range": {
+        "startLine": 17,
+        "startChar": 83,
+        "endLine": 17,
+        "endChar": 89
+      },
+      "revId": "ba41269be17e76d07ac22d6ee825e1dad40e45bd",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
