@@ -18,7 +18,7 @@
 %define RPM_MINOR_VERSION 20
 
 Name:           %{RPM_NAME}
-Version:        %{RPM_MAJOR_VERSION}
+Version:        %{RPM_MAJOR_VERSION}%{_version}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service instantiate playbooks
 License:        %{_platform_license}
