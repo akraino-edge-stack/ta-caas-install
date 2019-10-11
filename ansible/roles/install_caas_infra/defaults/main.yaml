@@ -21,6 +21,8 @@ infra_chart_images:
   - prometheus
   - sriovdp
   - fluentd
+  - storage_local_static_provisioner
+  - dynamic_local_pv_provisioner
   - hyperdanm
 infra_chart_separated_values:
   - fluentd
