@@ -112,3 +112,21 @@ elasticsearch:
 sriovdp:
   required: true
   image_name: {{ container_image_names | select('search', '/sriovdp') | list | last }}
+
+storagelocalstaticprovisioner:
+{% if ceph_configured is defined and ceph_configured %}
+  required: true
+{% else %}
+  required: true
+{% endif %}
+  local_storage_dir: "{{ caas.local_storage_path }}"
+  image_name: {{ container_image_names | select('search', '/storage_local_static_provisioner') | list | last }}
+
+dynamiclocalpvprovisioner:
+{% if ceph_configured is defined and ceph_configured %}
+  required: true
+{% else %}
+  required: true
+{% endif %}
+  local_storage_dir: "{{ caas.local_storage_path }}"
+  image_name: {{ container_image_names | select('search', '/dynamic_local_pv_provisioner') | list | last }}
