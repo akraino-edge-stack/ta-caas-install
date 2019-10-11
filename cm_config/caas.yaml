@@ -85,6 +85,7 @@ prometheus_data_retention_hours: 6
 custom_metrics_api_port: 6443
 custom_metrics_api_serviceport: 443
 metrics_server_port: 443
+local_storage_path: /mnt/caas_app/
 token_filename: token
 tokenscsv_filename: tokens.csv
 cert_path: /etc/kubernetes/ssl
