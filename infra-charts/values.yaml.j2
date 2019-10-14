@@ -76,38 +76,41 @@ danm_webhook:
   webhook_target_port: {{ caas.danm_webhook_target_port }}
 
 elasticsearch:
-{% set clustermasternodes = [] -%}
-{%- for masternumber in range(groups['caas_master']|length|int) -%}
-{%- if clustermasternodes.append('elasticsearch-master-' + (masternumber|string)) -%}{%- endif -%}
-{%- endfor %}
-  clustermasternodes: '{{ clustermasternodes|join(", ") }}'
 {% if caas.infra_log_store is defined and caas.infra_log_store != 'remote_syslog' %}
   required: true
 {% endif %}
+{%- set clustermasternodes = [] -%}
+{%- for masternumber in range(groups['caas_master']|length|int) -%}
+{%-   if clustermasternodes.append('elasticsearch-' + (masternumber|string)) -%}{%- endif -%}
+{%- endfor %}
+{%- set cluster_master_nodes = clustermasternodes|join(",") -%}
   url: {{ caas.elasticsearch_url }}
   port: {{ caas.elasticsearch_port }}
   scheme: {{ caas.elasticsearch_scheme }}
   logstash_prefix: {{ caas.elasticsearch_logstash_prefix }}
   image_name: {{ container_image_names | select('search', '/elasticsearch') | list | last }}
   memory_limit: {{ caas.elasticsearch_memory_limit }}
-  cpu_limit: 1
+  cpu_limit: {{ caas.elasticsearch_cpu_limit }}
   memory_request: {{ caas.elasticsearch_memory_request }}
+  cpu_request: {{ caas.elasticsearch_cpu_request }}
   java_heap_request: {{ caas.elasticsearch_java_heap_request }}
   java_heap_max: {{ caas.elasticsearch_java_heap_max }}
   port_for_cluster_communication: {{ caas.elasticsearch_port_for_cluster_communication }}
   es_uid: {{ caas.uid.elasticsearch }}
   cluster:
     name: "elasticsearch"
+{% set minimum_master_node_num = (((groups['caas_master']|length|int)/2)|round(0, 'ceil'))|int %}
+{% set master_node_num = groups['caas_master']|length|int %}
   env:
-{% set minimummasternodes = ((((groups['caas_master']|length|int)/2)+1)|round(0, 'floor'))|int %}
-    MINIMUM_MASTER_NODES: {{ minimummasternodes }}
-  master:
-    name: elasticsearch-master
-    replicas: "{{ groups['caas_master']|length|int }}"
-  data:
-    name: elasticsearch-data
-    replicas: "{{ groups['caas_master']|length|int }}"
-    terminationGracePeriodSeconds: 3600
+    DISCOVERY_SERVICE: {{ caas.elasticsearch_url }}
+    CLUSTER_INITIAL_MASTER_NODES: {{ cluster_master_nodes }}
+    MINIMUM_MASTER_NODES: {{ minimum_master_node_num }}
+    EXPECTED_MASTER_NODES: {{ master_node_num }}
+    EXPECTED_DATA_NODES: {{ master_node_num }}
+    RECOVER_AFTER_MASTER_NODES: {{ minimum_master_node_num }}
+    RECOVER_AFTER_MASTER_NODES: {{ minimum_master_node_num }}
+  replicas: {{ master_node_num }}
+  terminationGracePeriodSeconds: 3600
 
 sriovdp:
   required: true
