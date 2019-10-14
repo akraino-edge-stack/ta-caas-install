@@ -19,9 +19,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: elasticsearch-data
-    component: "{{ .Values.elasticsearch.data.name }}"
-  name: elasticsearch-data
+    app: elasticsearch
+    component: "{{ .Values.elasticsearch.cluster.name }}"
+  name: elasticsearch
   namespace: kube-system
 spec:
   ports:
@@ -32,15 +32,15 @@ spec:
       name: node-to-node
       protocol: TCP
   selector:
-    app: elasticsearch-data
-    component: "{{ .Values.elasticsearch.data.name }}"
+    app: elasticsearch
+    component: "{{ .Values.elasticsearch.cluster.name }}"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: elasticsearch-master
-    component: "{{ .Values.elasticsearch.master.name }}"
+    app: elasticsearch
+    component: "{{ .Values.elasticsearch.cluster.name }}"
   name: elasticsearch-logging
   namespace: kube-system
 spec:
@@ -48,10 +48,7 @@ spec:
     - port: {{ .Values.elasticsearch.port }}
       name: http
       protocol: TCP
-    - port: {{ .Values.elasticsearch.port_for_cluster_communication }}
-      name: node-to-node
-      protocol: TCP
   selector:
-    app: elasticsearch-master
-    component: "{{ .Values.elasticsearch.master.name }}"
+    app: elasticsearch
+    component: "{{ .Values.elasticsearch.cluster.name }}"
 {{ end }}

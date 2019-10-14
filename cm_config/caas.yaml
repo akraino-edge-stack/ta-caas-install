@@ -53,16 +53,18 @@ registry_repo: "caas"
 update_registry_url: registry-update.kube-system.svc.{{ dns_domain }}
 update_registry_port: 5556
 update_registry: https://{{ update_registry_url }}:{{ update_registry_port }}
-elasticsearch_url: elasticsearch-logging.kube-system.svc.{{ dns_domain }}
+elasticsearch_url: elasticsearch.kube-system.svc.{{ dns_domain }}
 elasticsearch_port: 9200
 elasticsearch_scheme: http
 elasticsearch_logstash_prefix: caas
 elasticsearch_memory_request: 1Gi
 elasticsearch_memory_limit: 2Gi
+elasticsearch_cpu_request: 100m
+elasticsearch_cpu_limit: 1
 elasticsearch_java_heap_request: 800m
 elasticsearch_java_heap_max: 800m
 elasticsearch_port_for_cluster_communication: 9300
-elasticsearch: https://{{ elasticsearch_url }}:{{ elasticsearch_port }}
+elasticsearch: "{{ elasticsearch_scheme }}://{{ elasticsearch_url }}:{{ elasticsearch_port }}"
 internal_flannel_interface: eth0
 container_wait_timeout: 120
 ldap_master_url: master.infraldap-server.{{ dns_domain }}

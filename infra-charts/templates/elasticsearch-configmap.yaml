@@ -32,15 +32,12 @@ data:
     network.host: 0.0.0.0
     bootstrap.memory_lock: ${BOOTSTRAP_MEMORY_LOCK:false}
     discovery:
-      zen:
-        minimum_master_nodes: ${MINIMUM_MASTER_NODES}
-      seed_hosts: ${DISCOVERY_SERVICE}
-    processors: ${PROCESSORS:}
+      seed_hosts: ${DISCOVERY_SERVICE:}
     gateway.expected_master_nodes: ${EXPECTED_MASTER_NODES:3}
     gateway.expected_data_nodes: ${EXPECTED_DATA_NODES:3}
     gateway.recover_after_time: ${RECOVER_AFTER_TIME:5m}
-    gateway.recover_after_master_nodes: ${RECOVER_AFTER_MASTER_NODES:3}
-    gateway.recover_after_data_nodes: ${RECOVER_AFTER_DATA_NODES:3}
+    gateway.recover_after_master_nodes: ${RECOVER_AFTER_MASTER_NODES:2}
+    gateway.recover_after_data_nodes: ${RECOVER_AFTER_DATA_NODES:2}
 
   supervisord.conf: |
     [unix_http_server]
