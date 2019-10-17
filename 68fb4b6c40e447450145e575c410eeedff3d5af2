@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6964a81c_1f645346",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-17T15:01:40Z",
+      "side": 1,
+      "message": "why two? did we lower the number of nodes now?",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24e0fffa_a831b0c3",
+        "filename": "infra-charts/templates/elasticsearch-statefulset.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-17T15:01:40Z",
+      "side": 1,
+      "message": "I thought we already put the code back to the container\nor was it with Fluentd?",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10310184_df2293bc",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-17T15:01:40Z",
+      "side": 1,
+      "message": "same question\nfor the record I would prefer 3 node clusters",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
