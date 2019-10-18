@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6a9b00fb_102db4b1",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-10-18T08:46:43Z",
+      "side": 1,
+      "message": "No. This is about when to start recovery after a major fault.\nLowering this option to 2 means that ES cluster can operate even if it is in degraded state (missing a single master or data). 2 is enough for majority.\n\nDoc: https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-gateway.html",
+      "parentUuid": "6964a81c_1f645346",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "24e0fffa_a831b0c3",
         "filename": "infra-charts/templates/elasticsearch-statefulset.yaml",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "4fe756c8_72a30a88",
+        "filename": "infra-charts/templates/elasticsearch-statefulset.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-10-18T08:46:43Z",
+      "side": 1,
+      "message": "Two static scripts have already been moved to the container.\nsupervisor.conf is a configuration file, which we used to keep them in configmap. But this case supervisor.conf is kinda static.",
+      "parentUuid": "24e0fffa_a831b0c3",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "10310184_df2293bc",
         "filename": "infra-charts/values.yaml.j2",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2019-10-17T15:01:40Z",
       "side": 1,
       "message": "same question\nfor the record I would prefer 3 node clusters",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37947db6_77de8196",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 233
+      },
+      "writtenOn": "2019-10-18T08:46:43Z",
+      "side": 1,
+      "message": "No change in this matter.\nThis variable is used for `recover_after_*` parameters.\nMINIMUM_MASTER_NODES env is not used anywhere, so I\u0027m about to drop it.",
+      "parentUuid": "10310184_df2293bc",
       "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
