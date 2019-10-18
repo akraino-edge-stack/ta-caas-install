@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ddc41b44_4ecff272",
+        "filename": "infra-charts/templates/elasticsearch-configmap.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-18T08:49:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6a9b00fb_102db4b1",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24e0fffa_a831b0c3",
         "filename": "infra-charts/templates/elasticsearch-statefulset.yaml",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Two static scripts have already been moved to the container.\nsupervisor.conf is a configuration file, which we used to keep them in configmap. But this case supervisor.conf is kinda static.",
       "parentUuid": "24e0fffa_a831b0c3",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25c8d439_3173628e",
+        "filename": "infra-charts/templates/elasticsearch-statefulset.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-18T08:49:36Z",
+      "side": 1,
+      "message": "well, it is a config file for supervisord, but not for the end user\nlet\u0027 move it inside the container pls\nit is generally not very good to expose config options with which user can mess up the whole ES cluster :)",
+      "parentUuid": "4fe756c8_72a30a88",
       "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
@@ -104,6 +140,24 @@
       "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75cf0232_be1bb7b7",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-18T08:49:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "37947db6_77de8196",
+      "revId": "68fb4b6c40e447450145e575c410eeedff3d5af2",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
