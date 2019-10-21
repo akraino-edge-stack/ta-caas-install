@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0689dd53_0a73ed45",
+        "filename": "ansible/roles/log/templates/java-hprof",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-10-21T15:15:31Z",
+      "side": 1,
+      "message": "This option applies per file, and 5GB for heap dumps seems a bit overkill.",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 14
+      },
+      "revId": "675ef7449974276d4ca86a63b900b6f599bb237b",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
