@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e89f7662_ceb63e52",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "??",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6f4460e_3943fd63",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "what for?\neven if really needed, read-only",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8798389_f1833e38",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "no. local dynamic provisioner agent is needed on all the nodes where LVM is configured as storage\nmaster is needed on \"caas_master\"s. if there are more than one. leader-election / HA is needed",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "234aee73_6151311c",
+        "filename": "infra-charts/templates/storage-local-static-provisioner-service.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "what for? is anyone reading/accessing this?\n\nI\u0027m kind of disappointed in \"let\u0027s just take everything as-is from some random location, without thinking\" approach",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bab0282_65467027",
+        "filename": "infra-charts/templates/storage-local-static-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "why is a blockCleaner needed if you configure the reclamation policy to Retain?",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8610c234_6ce311c3",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 10
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-21T13:49:52Z",
+      "side": 1,
+      "message": "this is common. just put it under localstorage.local_storage_dir\nthen you can simply do localstorage.dynamiclocalpvprovisioner_image_name etc.",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
