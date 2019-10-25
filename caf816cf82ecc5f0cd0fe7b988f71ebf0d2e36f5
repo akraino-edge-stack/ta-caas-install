@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "74873445_541eea93",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-25T11:54:12Z",
+      "side": 1,
+      "message": "It\u0027s called this way currently, so we introduced this way. Once changed, we will update.",
+      "parentUuid": "e89f7662_ceb63e52",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f6f4460e_3943fd63",
         "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2019-10-21T13:49:52Z",
       "side": 1,
       "message": "what for?\neven if really needed, read-only",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4ba3519_a091f7af",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-25T11:54:12Z",
+      "side": 1,
+      "message": "It\u0027s needed for permanent mounting. So after node restart mounted dirs should remain as is.",
+      "parentUuid": "f6f4460e_3943fd63",
       "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
@@ -50,6 +86,24 @@
       "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "431e687a_fffd8593",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-25T11:54:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e8798389_f1833e38",
+      "revId": "caf816cf82ecc5f0cd0fe7b988f71ebf0d2e36f5",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     },
     {
       "key": {
