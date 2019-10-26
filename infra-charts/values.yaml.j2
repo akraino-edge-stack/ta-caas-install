@@ -119,7 +119,6 @@ localstorage:
   required: false
 {% else %}
   required: true
-{% endif %}
   storagelocalstaticprovisioner:
     local_storage_dir: "{{ caas.local_storage_path }}"
     image_name: {{ container_image_names | select('search', '/storage_local_static_provisioner') | list | last }}
@@ -127,3 +126,4 @@ localstorage:
     local_storage_dir: "{{ caas.local_storage_path }}"
     image_name: {{ container_image_names | select('search', '/dynamic_local_pv_provisioner') | list | last }}
     name: "pv-provisioner"
+{% endif %}
