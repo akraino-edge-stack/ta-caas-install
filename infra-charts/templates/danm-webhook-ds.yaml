@@ -44,9 +44,15 @@ spec:
             - name: webhook-certs
               mountPath: /etc/webhook/certs
               readOnly: true
+            - name: time-mount
+              mountPath: /etc/localtime
+              readOnly: true
       volumes:
         # TODO: make it a secret
         - name: webhook-certs
           hostPath:
             path: /etc/kubernetes/ssl/
+        - name: time-mount
+          hostPath:
+            path: /etc/localtime
 {{ end }}
