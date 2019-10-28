@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ea553d8_8decc291",
+        "filename": "infra-charts/values.yaml.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-28T11:46:40Z",
+      "side": 1,
+      "message": "This should contain dynamic",
+      "revId": "e260e11f66ff025c41090883e508143e6b168dbd",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
