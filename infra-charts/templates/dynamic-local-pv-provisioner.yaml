@@ -60,7 +60,7 @@ spec:
           path: /dev/mapper/nova-caas_app
       - name: sig-storage-mount
         hostPath:
-          path: {{ .Values.localstorage.dynamiclocalpvprovisioner.local_storage_dir }}
+          path: {{ .Values.localstorage.local_storage_dir }}
       - name: fstab
         hostPath:
           path: /etc/fstab
