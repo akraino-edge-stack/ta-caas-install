@@ -18,34 +18,31 @@ limitations under the License.
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: local-provisioner-config
+  name: storage-local-static-provisioner-config
   namespace: kube-system
 data:
   storageClassMap: |
     local-volume:
-       hostDir: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
-       mountDir: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
-       blockCleanerCommand:
-         - "/scripts/shred.sh"
-         - "2"
+       hostDir: {{ .Values.localstorage.local_storage_dir }}
+       mountDir: {{ .Values.localstorage.local_storage_dir }}
        volumeMode: Filesystem
        fsType: xfs
 ---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: local-volume-provisioner
+  name: storage-local-static-provisioner
   namespace: kube-system
   labels:
-    app: local-volume-provisioner
+    app: storage-local-static-provisioner
 spec:
   selector:
     matchLabels:
-      app: local-volume-provisioner
+      app: storage-local-static-provisioner
   template:
     metadata:
       labels:
-        app: local-volume-provisioner
+        app: storage-local-static-provisioner
     spec:
       serviceAccountName: local-storage-admin
       containers:
@@ -59,17 +56,23 @@ spec:
                 fieldPath: spec.nodeName
           volumeMounts:
             - mountPath: /etc/provisioner/config
-              name: provisioner-config
+              name: storage-local-static-provisioner-config
               readOnly: true
-            - mountPath:  {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
+            - mountPath:  {{ .Values.localstorage.local_storage_dir }}
               name: local-volume
               mountPropagation: "HostToContainer"
+            - name: time-mount
+              mountPath: /etc/localtime
+              readOnly: true
       volumes:
-        - name: provisioner-config
+        - name: storage-local-static-provisioner-config
           configMap:
-            name: local-provisioner-config
+            name: storage-local-static-provisioner-config
         - name: local-volume
           hostPath:
-            path: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
+            path: {{ .Values.localstorage.local_storage_dir }}
+        - name: time-mount
+          hostPath:
+            path: /etc/localtime
 {{ end }}
 

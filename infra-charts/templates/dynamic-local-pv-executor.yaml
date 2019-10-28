@@ -16,9 +16,9 @@ limitations under the License.
 {{ if .Values.localstorage.required }}
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: dynamic-local-pv-provisioner
+  name: dynamic-local-pv-executor
   namespace: kube-system
   label:
     {{ .Values.kubernetes_component_label }}: {{ .Values.localstorage.dynamiclocalpvprovisioner.name }}
@@ -35,21 +35,52 @@ spec:
       - name: {{ .Values.localstorage.dynamiclocalpvprovisioner.name }}
         image: {{ .Values.localstorage.dynamiclocalpvprovisioner.image_name }}
         imagePullPolicy: IfNotPresent
-        command: [ "/provisioner" ]
+        command: [ "/executor", "--storagepath=/mnt/sig_storage" ]
+        volumeMounts:
+        - name: mapper
+          mountPath: /dev/mapper/nova-caas_app
+        - name: sig-storage-mount
+          mountPath: /mnt/sig_storage
+          mountPropagation: Bidirectional
+        - name: fstab
+          mountPath: /rootfs/fstab
+        - name: projects
+          mountPath: /etc/projects
+        - name: projid
+          mountPath: /etc/projid
+        - name: time-mount
+          mountPath: /etc/localtime
+          readOnly: true
         env:
         - name: NODE_NAME
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
-        volumeMounts:
-        - name: time-mount
-          mountPath: /etc/localtime
-          readOnly: true
+        securityContext:
+          privileged: true
+          capabilities:
+              add:
+                - SYS_ADMIN
       volumes:
-        - name: time-mount
-          hostPath:
-            path: /etc/localtime
-      nodeSelector:
-        nodetype: caas_master
+      - name: mapper
+        hostPath:
+          path: /dev/mapper/nova-caas_app
+      - name: sig-storage-mount
+        hostPath:
+          path: {{ .Values.localstorage.local_storage_dir }}
+      - name: fstab
+        hostPath:
+          path: /etc/fstab
+      - name: projects
+        hostPath:
+          path: /etc/projects
+          type: FileOrCreate
+      - name: projid
+        hostPath:
+          path: /etc/projid
+          type: FileOrCreate
+      - name: time-mount
+        hostPath:
+          path: /etc/localtime
       serviceAccountName: dynamic-pv
 {{ end }}
