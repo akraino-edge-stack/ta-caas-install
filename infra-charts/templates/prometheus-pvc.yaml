@@ -3,6 +3,9 @@ apiVersion: v1
 metadata:
   name: prometheus-pvc
   namespace: kube-system
+  annotations:
+    nodeselector:
+      nodetype=caas_master
 spec:
   accessModes:
     - ReadWriteOnce
