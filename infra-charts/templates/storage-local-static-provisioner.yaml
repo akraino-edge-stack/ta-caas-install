@@ -23,11 +23,8 @@ metadata:
 data:
   storageClassMap: |
     local-volume:
-       hostDir: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
-       mountDir: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
-       blockCleanerCommand:
-         - "/scripts/shred.sh"
-         - "2"
+       hostDir: {{ .Values.localstorage.local_storage_dir }}
+       mountDir: {{ .Values.localstorage.local_storage_dir }}
        volumeMode: Filesystem
        fsType: xfs
 ---
@@ -61,7 +58,7 @@ spec:
             - mountPath: /etc/provisioner/config
               name: provisioner-config
               readOnly: true
-            - mountPath:  {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
+            - mountPath:  {{ .Values.localstorage.local_storage_dir }}
               name: local-volume
               mountPropagation: "HostToContainer"
       volumes:
@@ -70,6 +67,6 @@ spec:
             name: local-provisioner-config
         - name: local-volume
           hostPath:
-            path: {{ .Values.localstorage.storagelocalstaticprovisioner.local_storage_dir }}
+            path: {{ .Values.localstorage.local_storage_dir }}
 {{ end }}
 
