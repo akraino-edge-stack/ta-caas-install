@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1b11b9df_8db773d0",
+        "filename": "infra-charts/templates/dynamic-local-pv-executor.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-30T12:50:05Z",
+      "side": 1,
+      "message": "que? you know you can mount it inside the container wherever you want, right?",
+      "parentUuid": "a3000522_148d1274",
+      "revId": "041ab4193c8bf9f67f08702b60c08bfaee91033b",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7a3c63fd_3e645b99",
         "filename": "infra-charts/templates/dynamic-local-pv-executor.yaml",
         "patchSetId": 3
