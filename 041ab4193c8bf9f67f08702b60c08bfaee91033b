@@ -123,6 +123,24 @@
       "revId": "041ab4193c8bf9f67f08702b60c08bfaee91033b",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c71f4c8b_7dd24878",
+        "filename": "infra-charts/templates/dynamic-local-pv-executor.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-31T10:49:51Z",
+      "side": 1,
+      "message": "that\u0027s not how it works :)\nfor sure this is just masking a real issue. let\u0027s deep-dive",
+      "parentUuid": "0cd2935b_0bc64861",
+      "revId": "041ab4193c8bf9f67f08702b60c08bfaee91033b",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
