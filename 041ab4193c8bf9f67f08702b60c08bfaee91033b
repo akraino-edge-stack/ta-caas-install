@@ -87,6 +87,24 @@
       "revId": "041ab4193c8bf9f67f08702b60c08bfaee91033b",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9717868_05e3cfef",
+        "filename": "infra-charts/templates/dynamic-local-pv-executor.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-31T06:44:39Z",
+      "side": 1,
+      "message": "Let\u0027s try with privileged",
+      "parentUuid": "17e3d28a_e1ee64b3",
+      "revId": "041ab4193c8bf9f67f08702b60c08bfaee91033b",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
