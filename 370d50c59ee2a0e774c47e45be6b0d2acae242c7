@@ -70,6 +70,30 @@
       "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5e54ac5_46f99bf2",
+        "filename": "infra-charts/templates/prometheus-pvc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-11-08T13:15:30Z",
+      "side": 1,
+      "message": "yeah this is actually the follow-up for the previous review, where I have identified the shortcoming in the upstream project during the review of its integration\nas I requested change in upstream as well (using the proper key, change the value to a JSON style so multiple labels can be provided) we decided to post the correction separately\n\nBTW this is still not okay, as it should be \"nodeSelector\"",
+      "parentUuid": "594095a3_f3e38644",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
