@@ -94,6 +94,30 @@
       "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a011ba9c_2c34dbbe",
+        "filename": "infra-charts/templates/prometheus-pvc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 236
+      },
+      "writtenOn": "2019-11-08T13:30:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b5e54ac5_46f99bf2",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
