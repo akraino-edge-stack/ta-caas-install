@@ -46,6 +46,30 @@
       "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "594095a3_f3e38644",
+        "filename": "infra-charts/templates/prometheus-pvc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2019-11-08T13:08:43Z",
+      "side": 1,
+      "message": "Is this a bugfix then? Do you mean that the original version\n\n  annotations:\n      nodeselector:\n        nodetype\u003dcaas_master\n\nsimply doesn\u0027t work? Or did it work but do something different than this modified version? This would be a great thing to clarify in the commit message.",
+      "parentUuid": "07882a64_c0a539c1",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
