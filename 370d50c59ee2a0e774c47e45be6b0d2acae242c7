@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9b7bf0e_080c3759",
+        "filename": "infra-charts/templates/prometheus-pvc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2019-11-08T12:34:28Z",
+      "side": 1,
+      "message": "Why is \"nokia\" being added here? What is the net effect of using the nokia specific nodeselector vs the generic one?",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "370d50c59ee2a0e774c47e45be6b0d2acae242c7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}
