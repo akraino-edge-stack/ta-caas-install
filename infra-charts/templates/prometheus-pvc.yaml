@@ -4,8 +4,7 @@ metadata:
   name: prometheus-pvc
   namespace: kube-system
   annotations:
-    nodeselector:
-      nodetype=caas_master
+      nokia.k8s.io/nodeSelector: '{"nodetype":"caas-master"}'
 spec:
   accessModes:
     - ReadWriteOnce
