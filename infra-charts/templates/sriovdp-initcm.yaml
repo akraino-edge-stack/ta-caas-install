@@ -26,21 +26,27 @@ data:
   init.sh: |-
     while true; do
       date
+      err=0
+
       rootdevs=`jq -r .resourceList[].rootDevices[] </etc/pcidp/config.json 2>/dev/null`
       if [[ -n "$rootdevs" ]]; then
-        cat /etc/pcidp/config.json | jq -r .resourceList[].rootDevices[] | while read pci; do
+        for pci in $rootdevs; do
           vf=`cat /sys/bus/pci/devices/0000:$pci/sriov_numvfs`
           echo "$pci: $vf VFs"
           if [[ -z "$vf" || "$vf" == "0" ]]; then
-            echo "No VFs found -> SR-IOV DP cannot be started -> sleep 10"
-            sleep 10
-            break
+            echo "No VFs found -> SR-IOV DP cannot be started"
+            err=1
           fi
         done
-        echo "Every SR-IOV designated PF has VF configured -> SR-IOV DP can be started -> rc=0"
+      else
+        echo "No SR-IOV designated PF found -> SR-IOV DP cannot be started"
+        err=1
+      fi
+
+      if [ $err -eq 0 ]; then
         exit 0
       else
-        echo "No SR-IOV designated PF found -> SR-IOV DP cannot be started -> sleep 10"
+        echo "Error happened -> sleep 10 -> retry"
         sleep 10
       fi
     done
