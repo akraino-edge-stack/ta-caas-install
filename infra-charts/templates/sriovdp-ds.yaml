@@ -59,15 +59,15 @@ spec:
           mountPath: /etc/pcidp/
           readOnly: true
       initContainers:
-      - name: init-sriov
+      - name: init
         image: {{ .Values.sriovdp.image_name }}
-        command: ['sh', '-c', 'source /init/init.sh']
+        command: ["/usr/local/bin/init.sh"]
         volumeMounts:
+        - name: time-mount
+          mountPath: /etc/localtime
+          readOnly: true
         - name: sriovdp-config
           mountPath: /etc/pcidp/
-          readOnly: true
-        - name: sriovdp-init
-          mountPath: /init/
           readOnly: true
       volumes:
       - name: time-mount
@@ -82,8 +82,5 @@ spec:
       - name: sriovdp-config
         hostPath:
           path: /etc/pcidp/
-      - name: sriovdp-init
-        configMap:
-          name: sriovdp-initcm
       terminationGracePeriodSeconds: 1
 {{ end }}
