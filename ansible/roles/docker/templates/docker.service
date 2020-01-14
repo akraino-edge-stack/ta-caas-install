@@ -16,7 +16,7 @@ limitations under the License.
 [Unit]
 Description=Docker Application Container Engine
 Documentation=https://docs.docker.com
-After=network.target docker.socket
+After=network.target docker.socket containerd.service
 Requires=docker.socket
 Before=kubelet.service
 Wants=kubelet.service
@@ -28,6 +28,8 @@ MemoryAccounting=true
 CPUAccounting=true
 BlockIOAccounting=true
 TasksAccounting=true
+Delegate=yes
+KillMode=process
 Type=notify
 EnvironmentFile=-/etc/sysconfig/docker-storage
 EnvironmentFile=-/etc/sysconfig/docker-proxy
@@ -46,6 +48,7 @@ ExecStart=/usr/bin/dockerd -H  fd:// \
                            --ip-forward=false \
                            --live-restore=true \
                            --bip={{ caas.docker0_cidr | default('172.17.0.1/16', true) }} \
+                           --containerd=/run/containerd/containerd.sock \
                            --exec-opt native.cgroupdriver=cgroupfs \
                            $DOCKER_STORAGE_OPTIONS
 MountFlags=shared
