@@ -35,6 +35,11 @@ spec:
       hostNetwork: true
       nodeSelector:
         sriov: enabled
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"
       containers:
       - name: sriovdp
         image: {{ .Values.sriovdp.image_name }}

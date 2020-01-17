@@ -47,6 +47,11 @@ spec:
                   component: "{{ .Values.elasticsearch.cluster.name }}"
       nodeSelector:
         nodetype: caas_master
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"
       containers:
       - name: elasticsearch
         env:
