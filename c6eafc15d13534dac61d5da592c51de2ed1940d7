@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9d44696_6ea1d25f",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2020-01-20T08:29:30Z",
+      "side": 1,
+      "message": "Please update spec file also",
+      "revId": "c6eafc15d13534dac61d5da592c51de2ed1940d7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
