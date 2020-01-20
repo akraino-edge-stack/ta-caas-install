@@ -16,6 +16,24 @@
       "revId": "c6eafc15d13534dac61d5da592c51de2ed1940d7",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fd4cf6c_2292d290",
+        "filename": "infra-charts/templates/dynamic-local-pv-provisioner.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 312
+      },
+      "writtenOn": "2020-01-20T09:13:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9d44696_6ea1d25f",
+      "revId": "c6eafc15d13534dac61d5da592c51de2ed1940d7",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
