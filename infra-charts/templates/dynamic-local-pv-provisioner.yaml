@@ -51,5 +51,10 @@ spec:
             path: /etc/localtime
       nodeSelector:
         nodetype: caas_master
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"
       serviceAccountName: dynamic-pv
 {{ end }}

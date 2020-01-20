@@ -109,3 +109,8 @@ spec:
         hostPath:
           path: /var/lib/fluentd
       serviceAccountName: fluentd
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"

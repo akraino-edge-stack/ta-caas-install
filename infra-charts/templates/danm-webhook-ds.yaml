@@ -35,6 +35,11 @@ spec:
       serviceAccountName: danm-webhook
       nodeSelector:
         nodetype: caas_master
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"
       containers:
         - name: danm-webhook
           image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/hyperdanm:{{ .Values.danm_webhook.container_version }}

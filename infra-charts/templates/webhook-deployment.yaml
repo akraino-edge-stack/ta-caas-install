@@ -35,6 +35,11 @@ spec:
       priorityClassName: "system-cluster-critical"
       nodeSelector:
         nodetype: caas_master
+      tolerations:
+      - key: "node-maintenancemode"
+        value: "enabled"
+        operator: "Equal"
+        effect: "NoExecute"
       containers:
         - name: cpu-dev-pod-mutator
           image: {{ .Values.registry_url }}/{{ .Values.registry_reponame }}/cpupooler:{{ .Values.cpupooler.container_version }}
