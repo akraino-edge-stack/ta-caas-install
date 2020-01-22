@@ -23,6 +23,7 @@ class FilterModule(object):
             'extract_sriov_provider_network_interfaces': extract_sriov_provider_network_interfaces,
             'filter_network_profiles_by_type': filter_network_profiles_by_type,
             'filter_provider_networks_by_type': filter_provider_networks_by_type,
+            'filter_dpdk_sriov_provider_networks': filter_dpdk_sriov_provider_networks,
             'get_kube_options': get_kube_options,
             'get_mapped_key': get_mapped_key,
             'get_provider_networks': get_provider_networks,
@@ -43,6 +44,11 @@ def filter_network_profiles_by_type(profiles, key, type):
 def filter_provider_networks_by_type(profile, type):
     return {name: network for name, network in profile.iteritems()
             if network.get('type', "") == type}
+
+
+def filter_dpdk_sriov_provider_networks(profile):
+    return {name: network for name, network in profile.iteritems()
+            if 0 < network.get('dpdk_vf_count', 0)}
 
 
 def get_kube_options(options):

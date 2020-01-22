@@ -52,6 +52,12 @@ hostDevices:
         {% set sriov_interaces = caas_sriov_provider_networks | extract_sriov_provider_network_interfaces %}
         {% set sriov_device_pools = sriov_interaces | map('regex_replace', '(.*)', 'nokia.k8s.io/sriov_\\1') | list %}
   {{ make_host_devices(sriov_device_pools, networking['provider_networks'][tenant_network]) | indent(2) -}}
+        {% set caas_dpdk_sriov_provider_networks = caas_sriov_provider_networks | filter_dpdk_sriov_provider_networks() %}
+        {% if caas_dpdk_sriov_provider_networks %}
+          {% set dpdk_sriov_interaces = caas_dpdk_sriov_provider_networks | extract_sriov_provider_network_interfaces %}
+          {% set dpdk_sriov_device_pools = dpdk_sriov_interaces | map('regex_replace', '(.*)', 'nokia.k8s.io/sriov_vfio_\\1') | list %}
+  {{ make_host_devices(dpdk_sriov_device_pools, networking['provider_networks'][tenant_network]) | indent(2) -}}
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endfor %}
