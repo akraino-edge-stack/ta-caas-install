@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d0c3efb_64012bb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2020-01-22T13:42:08Z",
+      "side": 1,
+      "message": "typo I assume? TenanConfig -\u003e TenantConfig",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "2cc986754d5bde3e7a8395ccc5b163173a3c737d",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}
